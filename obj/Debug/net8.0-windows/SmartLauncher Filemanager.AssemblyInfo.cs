@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmartLauncher Filemanager")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1275badf4e149d6ac92f52fd3a2369eac126a623")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+349f266ea41ae63ca4ee8bed51472d6b3ad70601")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmartLauncher Filemanager")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmartLauncher Filemanager")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

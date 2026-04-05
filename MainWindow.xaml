@@ -32,8 +32,22 @@
                 <materialDesign:PackIcon Kind="ArrowRight" />
             </ToggleButton>
 
-            <TextBlock Text="ЗДЕСЬ БУДЕТ ГЛАВНОЕ МЕНЮ ЛАУНЧЕРА" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <!-- ЦЕНТРАЛЬНЫЙ СПИСОК И КНОПКА -->
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <ListBox x:Name="FilesListBox" MouseDoubleClick="FilesListBox_MouseDoubleClick" Width="642" Height="283" Margin="10" Background="#FF463E54" Foreground="White" RenderTransformOrigin="0.5,0.5" >
+                    <ListBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleY="0.364"/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="1.028"/>
+                        </TransformGroup>
+                    </ListBox.RenderTransform>
+                </ListBox>
+                <Button Content="Добавить файл" Click="AddFile_Click" Margin="10" Style="{StaticResource MaterialDesignRaisedButton}" Background="#FF463E54" BorderBrush="#FF352F40" />
+            </StackPanel>
         </Grid>
+
     </materialDesign:DrawerHost>
 
 

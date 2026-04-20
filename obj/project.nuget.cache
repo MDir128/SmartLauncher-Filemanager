@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "dj/aMqpmIpU=",
+  "dgSpecHash": "RYo+gCYL5os=",
   "success": true,
   "projectFilePath": "C:\\Users\\Pavel\\source\\repos\\SmartLauncher-Filemanager\\SmartLauncher Filemanager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Pavel\\.nuget\\packages\\materialdesigncolors\\5.3.1\\materialdesigncolors.5.3.1.nupkg.sha512",
     "C:\\Users\\Pavel\\.nuget\\packages\\materialdesignthemes\\5.3.1\\materialdesignthemes.5.3.1.nupkg.sha512",
-    "C:\\Users\\Pavel\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.77\\microsoft.xaml.behaviors.wpf.1.1.77.nupkg.sha512"
+    "C:\\Users\\Pavel\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.77\\microsoft.xaml.behaviors.wpf.1.1.77.nupkg.sha512",
+    "C:\\Users\\Pavel\\.nuget\\packages\\system.io.hashing\\10.0.6\\system.io.hashing.10.0.6.nupkg.sha512"
   ],
   "logs": []
 }

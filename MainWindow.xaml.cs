@@ -1,21 +1,23 @@
-﻿using System.Text;
+﻿using System;
+using System.Diagnostics;
+using System.Drawing; // Нужно добавить в ссылках, если будет ругаться
+using System.IO;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Input;
 using Microsoft.Win32;
-using System.Diagnostics;
 
 namespace SmartLauncher_Filemanager
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    // Класс, который описывает наше приложение в списке
+    public class AppInfo
+    {
+        public string Name { get; set; }      // Имя (например, "Steam")
+        public string Path { get; set; }      // Путь к .exe
+        public ImageSource Icon { get; set; } // Картинка иконки
+    }
+
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -23,33 +25,63 @@ namespace SmartLauncher_Filemanager
             InitializeComponent();
         }
 
-        // Логика нажатия на кнопку
         private void AddFile_Click(object sender, RoutedEventArgs e)
         {
-            // Создаем стандартное окно выбора файла (Проводник)
             OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Applications (*.exe)|*.exe|All files (*.*)|*.*";
 
-            // Если пользователь выбрал файл и нажал "Открыть"
             if (openFileDialog.ShowDialog() == true)
             {
-                // Добавляем путь к файлу в наш список на экране
-                FilesListBox.Items.Add(openFileDialog.FileName);
+                string filePath = openFileDialog.FileName;
+
+                // Создаем новый объект приложения
+                var newApp = new AppInfo
+                {
+                    Path = filePath,
+                    Name = System.IO.Path.GetFileNameWithoutExtension(filePath), // Берем имя файла без .exe
+                    Icon = ExtractIcon(filePath) // Вытаскиваем иконку
+                };
+
+                FilesListBox.Items.Add(newApp);
+            }
+        }
+
+        // Метод для вытягивания иконки из .exe файла
+        private ImageSource ExtractIcon(string filePath)
+        {
+            try
+            {
+                // Явно указываем System.Drawing.Icon, чтобы не было конфликта с WPF типами
+                using (System.Drawing.Icon icon = System.Drawing.Icon.ExtractAssociatedIcon(filePath))
+                {
+                    if (icon == null) return null;
+
+                    return System.Windows.Interop.Imaging.CreateBitmapSourceFromHIcon(
+                        icon.Handle,
+                        Int32Rect.Empty,
+                        BitmapSizeOptions.FromEmptyOptions());
+                }
+            }
+            catch
+            {
+                return null;
             }
         }
 
 
-        //ДАЛЕЕ ИДЕТ НЕЙРОКОД, НАДО БУДЕТ ИСПРАВИТЬ
         private void FilesListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            // Проверяем, выбран ли какой-то файл в списке
-            if (FilesListBox.SelectedItem != null)
+            if (FilesListBox.SelectedItem is AppInfo selectedApp)
             {
-                string filePath = FilesListBox.SelectedItem.ToString();
-
-                // Запускаем файл стандартной программой Windows
-                Process.Start(new ProcessStartInfo(filePath) { UseShellExecute = true });
+                try
+                {
+                    Process.Start(new ProcessStartInfo(selectedApp.Path) { UseShellExecute = true });
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка: " + ex.Message);
+                }
             }
         }
-
     }
 }

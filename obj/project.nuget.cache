@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "G11+Y0CuoB0=",
+  "dgSpecHash": "r2rg3NhICI0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\petri\\Desktop\\Важная папка\\Учеба\\СЕМ 3-4\\СЕМ4\\ТП_Проект\\SmartLauncher-Filemanager\\SmartLauncher Filemanager.csproj",
+  "projectFilePath": "D:\\Visual Studio\\MyProjects\\Smart Launcher\\SmartLauncher Filemanager.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\petri\\.nuget\\packages\\materialdesigncolors\\5.3.1\\materialdesigncolors.5.3.1.nupkg.sha512",
-    "C:\\Users\\petri\\.nuget\\packages\\materialdesignthemes\\5.3.1\\materialdesignthemes.5.3.1.nupkg.sha512",
-    "C:\\Users\\petri\\.nuget\\packages\\microsoft.win32.systemevents\\10.0.7\\microsoft.win32.systemevents.10.0.7.nupkg.sha512",
-    "C:\\Users\\petri\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.77\\microsoft.xaml.behaviors.wpf.1.1.77.nupkg.sha512",
-    "C:\\Users\\petri\\.nuget\\packages\\system.drawing.common\\10.0.7\\system.drawing.common.10.0.7.nupkg.sha512",
-    "C:\\Users\\petri\\.nuget\\packages\\system.io.hashing\\10.0.6\\system.io.hashing.10.0.6.nupkg.sha512"
+    "C:\\Users\\Pavel\\.nuget\\packages\\materialdesigncolors\\5.3.1\\materialdesigncolors.5.3.1.nupkg.sha512",
+    "C:\\Users\\Pavel\\.nuget\\packages\\materialdesignthemes\\5.3.1\\materialdesignthemes.5.3.1.nupkg.sha512",
+    "C:\\Users\\Pavel\\.nuget\\packages\\microsoft.win32.systemevents\\10.0.7\\microsoft.win32.systemevents.10.0.7.nupkg.sha512",
+    "C:\\Users\\Pavel\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.77\\microsoft.xaml.behaviors.wpf.1.1.77.nupkg.sha512",
+    "C:\\Users\\Pavel\\.nuget\\packages\\system.drawing.common\\10.0.7\\system.drawing.common.10.0.7.nupkg.sha512",
+    "C:\\Users\\Pavel\\.nuget\\packages\\system.io.hashing\\10.0.6\\system.io.hashing.10.0.6.nupkg.sha512"
   ],
   "logs": []
 }

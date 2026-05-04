@@ -233,6 +233,52 @@
         "build": {
           "buildTransitive/net8.0/_._": {}
         }
+      },
+      "TagLibSharp/2.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/TagLibSharp.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/TagLibSharp.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "WindowsAPICodePack-Core/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/Microsoft.WindowsAPICodePack.dll": {}
+        },
+        "runtime": {
+          "lib/Microsoft.WindowsAPICodePack.dll": {}
+        }
+      },
+      "WindowsAPICodePack-Shell/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "WindowsAPICodePack-Core": "1.1.1"
+        },
+        "compile": {
+          "lib/Microsoft.WindowsAPICodePack.Shell.dll": {}
+        },
+        "runtime": {
+          "lib/Microsoft.WindowsAPICodePack.Shell.dll": {}
+        }
+      },
+      "WindowsAPICodePack-ShellExtensions/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "WindowsAPICodePack-Shell": "1.1.1"
+        },
+        "compile": {
+          "lib/Microsoft.WindowsAPICodePack.ShellExtensions.dll": {}
+        },
+        "runtime": {
+          "lib/Microsoft.WindowsAPICodePack.ShellExtensions.dll": {}
+        }
       }
     }
   },
@@ -519,13 +565,72 @@
         "system.io.hashing.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "TagLibSharp/2.3.0": {
+      "sha512": "Qo4z6ZjnIfbR3Us1Za5M2vQ97OWZPmODvVmepxZ8XW0UIVLGdO2T63/N3b23kCcyiwuIe0TQvMEQG8wUCCD1mA==",
+      "type": "package",
+      "path": "taglibsharp/2.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/TagLibSharp.dll",
+        "lib/net462/TagLibSharp.pdb",
+        "lib/net462/TaglibSharp.xml",
+        "lib/netstandard2.0/TagLibSharp.dll",
+        "lib/netstandard2.0/TagLibSharp.pdb",
+        "lib/netstandard2.0/TaglibSharp.xml",
+        "taglibsharp.2.3.0.nupkg.sha512",
+        "taglibsharp.nuspec"
+      ]
+    },
+    "WindowsAPICodePack-Core/1.1.2": {
+      "sha512": "tGEkicg61OvHHuFyD4Vu8H4R0q5H1dlpN6fqjdYG+MGIp16znEVo/I+LhMTx3nKpM46reCcE6oC8fJqVJix2Bg==",
+      "type": "package",
+      "path": "windowsapicodepack-core/1.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/Microsoft.WindowsAPICodePack.dll",
+        "lib/Microsoft.WindowsAPICodePack.xml",
+        "windowsapicodepack-core.1.1.2.nupkg.sha512",
+        "windowsapicodepack-core.nuspec"
+      ]
+    },
+    "WindowsAPICodePack-Shell/1.1.1": {
+      "sha512": "CPFamhL3jPo8O6+ErGsLS4LK3DWP5ncxqhbzpPnYkIW9rjatunUij35iTjprbr9mlYR/5Pbguw21MwSmTOKR4g==",
+      "type": "package",
+      "path": "windowsapicodepack-shell/1.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/Microsoft.WindowsAPICodePack.Shell.dll",
+        "lib/Microsoft.WindowsAPICodePack.Shell.xml",
+        "windowsapicodepack-shell.1.1.1.nupkg.sha512",
+        "windowsapicodepack-shell.nuspec"
+      ]
+    },
+    "WindowsAPICodePack-ShellExtensions/1.1.1": {
+      "sha512": "DkSEVhbM6tApOz4KWAnpOicItDai1SgJZYTR//pS4eywn/lTKvwTC5R4MD3UTVYNhssPBKM/mPZBK39lhP1Tsg==",
+      "type": "package",
+      "path": "windowsapicodepack-shellextensions/1.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/Microsoft.WindowsAPICodePack.ShellExtensions.dll",
+        "lib/Microsoft.WindowsAPICodePack.ShellExtensions.xml",
+        "windowsapicodepack-shellextensions.1.1.1.nupkg.sha512",
+        "windowsapicodepack-shellextensions.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
       "MaterialDesignThemes >= 5.3.1",
       "System.Drawing.Common >= 10.0.7",
-      "System.IO.Hashing >= 10.0.6"
+      "System.IO.Hashing >= 10.0.6",
+      "TagLibSharp >= 2.3.0",
+      "WindowsAPICodePack-Core >= 1.1.2",
+      "WindowsAPICodePack-ShellExtensions >= 1.1.1"
     ]
   },
   "packageFolders": {
@@ -590,6 +695,18 @@
           "System.IO.Hashing": {
             "target": "Package",
             "version": "[10.0.6, )"
+          },
+          "TagLibSharp": {
+            "target": "Package",
+            "version": "[2.3.0, )"
+          },
+          "WindowsAPICodePack-Core": {
+            "target": "Package",
+            "version": "[1.1.2, )"
+          },
+          "WindowsAPICodePack-ShellExtensions": {
+            "target": "Package",
+            "version": "[1.1.1, )"
           }
         },
         "imports": [
@@ -614,5 +731,37 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.104/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"WindowsAPICodePack-Core 1.1.2\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \"net8.0-windows7.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "WindowsAPICodePack-Core",
+      "targetGraphs": [
+        "net8.0-windows"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"WindowsAPICodePack-Shell 1.1.1\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \"net8.0-windows7.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "WindowsAPICodePack-Shell",
+      "targetGraphs": [
+        "net8.0-windows"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"WindowsAPICodePack-ShellExtensions 1.1.1\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \"net8.0-windows7.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "WindowsAPICodePack-ShellExtensions",
+      "targetGraphs": [
+        "net8.0-windows"
+      ]
+    }
+  ]
 }

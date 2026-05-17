@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 public class FileCategory
 {
     private static readonly string[] GameExtensions = { ".exe" };
-    private static readonly string[] VideoExtensions = { ".mkv", ".avi", ".mp4" };
+    private static readonly string[] VideoExtensions = { ".avi", ".mp4" };
     private static readonly string[] MusicExtensions = { ".mp3", ".wav" };
     public static string? GetCategory(string file_extension)
     {

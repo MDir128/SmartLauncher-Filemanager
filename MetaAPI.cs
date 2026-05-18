@@ -36,7 +36,7 @@ public class MetaAPI
             //ДЛЯ МУЗЫКИ И ВИДЕО
             if (filecat == "music" || filecat == "video")
             {
-                var tagfile = TagLib.File.Create(fileaddress);
+                using var tagfile = TagLib.File.Create(fileaddress);
                 meta["Title"] = tagfile.Tag.Title ?? "";
                 meta["Author"] = tagfile.Tag.Performers.Length > 0 ? tagfile.Tag.Performers[0] : ""; //возвращает только первого 
                 meta["Comment"] = tagfile.Tag.Comment ?? "";
